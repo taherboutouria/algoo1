@@ -1,0 +1,27 @@
+ALGORITHM sentence
+VAR
+    sentence:STRING[]; 
+    nbw,nbc,nbv:INTEGER;
+
+BEGIN
+   nbc:= 0 ;
+   nbw:= 1 ;
+     write ("type the sentence")
+     read (sentence)
+   REPEAT
+      
+      IF (sentence[nbc]= " ") THEN
+        nbw:=nbw+1 ;
+      END_IF
+      IF (sentence[nbc] in ("a", "u" , "i" , "e" , "o" , "y")) THEN
+       nbv:= nbv+1 ;
+      END_IF 
+      nbc := nbc+1 ;
+      UNTIL (sentence [nbc]=".")
+     write ( "le nombre de caractere est", nbc+1)
+     write ( "le nombre de mot est", nbw)
+     write ("le nombre de voyelle est", nbv)
+       
+
+
+END
